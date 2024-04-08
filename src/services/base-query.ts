@@ -9,7 +9,7 @@ const baseQuery = fetchBaseQuery({
     }
 })
 
-const apiSlice = createApi({
+export const apiSlice = createApi({
     baseQuery: baseQuery,
     endpoints: () => ({})
 });
