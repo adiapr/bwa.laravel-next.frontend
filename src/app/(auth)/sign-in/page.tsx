@@ -41,9 +41,7 @@ function SignIn() {
 
   async function onSubmit(values: FormData) {
     try {
-      
-
-      const res = await login(values).unwrap;
+      const res = await login(values).unwrap();
       console.log(res);
 
       form.reset();
