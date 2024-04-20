@@ -19,6 +19,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useToast } from "@/components/atomics/use-toast";
 import { useLoginMutation } from "@/services/auth.service";
 import { signIn } from "next-auth/react";
+import { Suspense } from "react";
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -161,4 +162,10 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default function SuspendedSignIn() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignIn />
+    </Suspense>
+  );
+}
