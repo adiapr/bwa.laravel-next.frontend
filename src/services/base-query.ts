@@ -11,7 +11,10 @@ const baseQuery = fetchBaseQuery({
             headers.set("Authorization", `Bearer ${session.user.token}`);
         }
 
-        headers.set("Accept", "application/json")
+        headers.set("Accept", "application/json");
+
+        headers.set("Access-Control-Allow-Origin", "http://ngekos.carikontak.my.id");
+        headers.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         return headers;
     }
 })
